@@ -1,0 +1,29 @@
+.main {
+	margin: 3%;
+}
+
+.main__img {
+	text-align: center;
+}
+
+.main__img img {
+	width: 61%;
+	height: auto;
+}
+
+.main__text {
+	z-index: 400;
+	text-align: center;
+	position: absolute;
+	top: 20%;
+	left: 43%;
+	font-size: 23px;
+	text-transform: capitalize;
+	font-weight: bold;
+	color: gray;
+	background-color: #ddd;
+}
+
+.main__offer-img {
+	width: 100%;
+}

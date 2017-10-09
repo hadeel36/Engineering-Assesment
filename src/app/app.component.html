@@ -1,26 +1,28 @@
-<div class="row" style="text-align: center;">
-  <img src="./assets/images/main.jpeg" alt="#" style="width: 61%; height: auto;">
-  <div style="z-index: 400; text-align: center; position: absolute; top: 20%; left: 43%">learn more discover more</div>
-</div>
+<div class="main">
+    <div class="row main__img">
+      <img src="./assets/images/main.jpeg" alt="#">
+      <div class="main__text">learn more discover more</div>
+    </div>
 
-<div class="container">
-    <div class="row">
-        <div class="thumbnail col-md-4 col-sm-6" *ngFor="let offer of offers">
-            <img src="{{offer.hotelInfo.hotelImageUrl}}" alt="#">
-            <h2 *ngIf= "offer.hotelInfo.promotionDescription"><span>{{ offer.hotelInfo.promotionDescription }}</span></h2>
-            <div class="caption">
-                <h5>${{ offer.hotelPricingInfo.totalPriceValue }}</h5>
-                <h4><a href={{offer.hotelUrls.hotelInfositeUrl}}>{{ offer.offerDateRange.lengthOfStay }} Nights {{ getRating(offer.hotelInfo.hotelStarRating) }} - Star Stay</a></h4>
-                <a href= {{offer.hotelUrls.hotelSearchResultUrl}}> 
-                    <p> {{ offer.destination.city }} </p>
-                </a>
-                <p> Valid from {{offer.hotelInfo.travelStartDate}} thru {{offer.hotelInfo.travelEndDate}} </p>
-                <div class="ratings">
-                    <p class="pull-right">Guest Rating</p>
-                    <p>{{ offer.hotelInfo.hotelGuestReviewRating }} </p>
+    <div class="container">
+        <div class="row">
+            <div class="thumbnail col-md-4 col-sm-6" *ngFor="let offer of offers">
+                <img class="main__offer-img" src="{{offer.hotelInfo.hotelImageUrl}}" alt="#">
+                <h2 *ngIf= "offer.hotelInfo.promotionDescription"><span>{{ offer.hotelInfo.promotionDescription }}</span></h2>
+                <div class="caption">
+                    <h5>${{ offer.hotelPricingInfo.totalPriceValue }}</h5>
+                    <h4><a href={{offer.hotelUrls.hotelInfositeUrl}}>{{ offer.offerDateRange.lengthOfStay }} Nights {{ getRating(offer.hotelInfo.hotelStarRating) }} - Star Stay</a></h4>
+                    <a href= {{offer.hotelUrls.hotelSearchResultUrl}}> 
+                        <p> {{ offer.destination.city }} </p>
+                    </a>
+                    <p> Valid from {{offer.hotelInfo.travelStartDate}} thru {{offer.hotelInfo.travelEndDate}} </p>
+                    <div class="ratings">
+                        <p class="pull-right">Guest Rating</p>
+                        <p>{{ getRating(offer.hotelInfo.hotelGuestReviewRating) }} </p>
+                    </div>
+                    <p align="center"><a href="{{offer.hotelUrls.hotelInfositeUrl}}" class="btn btn-primary btn-block">Offer more details</a></p>
                 </div>
-                <p align="center"><a href="{{offer.hotelUrls.hotelInfositeUrl}}" class="btn btn-primary btn-block">Offer more details</a></p>
-            </div>
-        </div>        
+            </div>        
+        </div>
     </div>
 </div>
